@@ -1,0 +1,23 @@
+.container {
+    max-width: 600px;
+    top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.orange-text {
+    color: #ff9b29;
+}
+
+.my-button {
+    background-color:#ffb158;
+    border: 1px solid rgb(255, 146, 21);
+}
+
+.my-button:hover {
+	background-color:#ff9b29;
+}
+.my-button:active {
+	position:relative;
+	top:1px;
+}

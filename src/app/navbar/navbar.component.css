@@ -1,0 +1,20 @@
+.navbar-custom { 
+    background-color: #ffe6ee;
+  }
+
+  .text-glowing-0:hover {color: #fff4f7;}
+  
+  .navbar {
+    min-height: 100px;
+  }
+  
+  .tupla-logo{
+    font-family:"Pastel W01 Regular" !important;
+    font-size:50px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: -1.5px 0 #ffbdd2, 0 1.5px #ffbdd2, 1.5px 0 #ffbdd2, 0 -1.5px #ffbdd2;
+    color: #ffffff;
+    text-decoration: none;
+  }
