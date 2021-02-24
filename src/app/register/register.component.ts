@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     this.service.formModel.reset();
   }
 
-  lineApi = 'https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=4NrH6eNXkKpHdjxi5bxODy&redirect_uri=http://localhost:4200/home&scope=notify&state=';
+  lineApi = 'https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=4NrH6eNXkKpHdjxi5bxODy&redirect_uri=http://34.126.120.13:3000/registers/linecallback&scope=notify&state=';
 
   get f() { return this.service.formModel.controls; }
 
