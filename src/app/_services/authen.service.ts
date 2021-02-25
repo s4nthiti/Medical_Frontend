@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,8 +8,9 @@ import { Router } from '@angular/router';
 })
 export class AuthenService {
 
-  readonly BaseURI = 'http://34.126.120.13:3000/';
+  readonly BaseURI = 'http://localhost:3000/';
   readonly RegisterURL = 'registers/save-user';
+  readonly CallbackURL = 'registers/linecallback';
 
   constructor(private fb: FormBuilder, private http: HttpClient,private router: Router) { }
 
@@ -28,5 +29,13 @@ export class AuthenService {
     };
     console.log(body);
     return this.http.post(this.BaseURI + this.RegisterURL , body);
+  }
+
+  sendCallback(code, state) {
+    let params = new HttpParams();
+    params = params.append('code', code);
+    params = params.append('state', state);
+    console.log(params)
+    return this.http.get(this.BaseURI + this.CallbackURL, {params: params}).subscribe(response => console.log(response));
   }
 }
