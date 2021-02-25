@@ -11,6 +11,7 @@ import { ReactiveFormsModule , FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { CallbackComponent } from './callback/callback.component';
+import { BackendComponent } from './backend/backend.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CallbackComponent } from './callback/callback.component';
     HomeComponent,
     FooterComponent,
     RegisterComponent,
-    CallbackComponent
+    CallbackComponent,
+    BackendComponent
   ],
   imports: [
     BrowserModule,
