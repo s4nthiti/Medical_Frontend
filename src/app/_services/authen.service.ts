@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthenService {
 
-  readonly BaseURI = 'http://localhost:3000/';
+  readonly BaseURI = 'http://34.126.120.13:3000/';
   readonly RegisterURL = 'registers/save-user';
   readonly CallbackURL = 'registers/linecallback';
 
