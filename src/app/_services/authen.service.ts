@@ -17,7 +17,7 @@ export class AuthenService {
   readonly AdminUsername = 'rightdoc_backend';
   readonly AdminPassword = 'admin';
 
-  readonly BaseURI = 'http://localhost:3000/';
+  readonly BaseURI = 'http://34.126.120.13:3000/';
   readonly RegisterURL = 'registers/save-user';
   readonly CallbackURL = 'registers/linecallback';
   readonly MedicineURL = 'medicines/';
