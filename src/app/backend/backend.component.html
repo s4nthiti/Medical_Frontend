@@ -1,1 +1,29 @@
-<p>backend works!</p>
+<div class="container-fluid background">
+    <div class="container">
+        <h1>เข้าระบบหลังบ้าน</h1>
+        <div>
+            <form [formGroup]="service.loginModel" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" formControlName="Username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Username.errors }" />
+                    <div *ngIf="submitted && f.Username.errors" class="invalid-feedback">
+                        <div *ngIf="f.Username.errors?.required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password?.errors }" />
+                    <div *ngIf="submitted && f.Password?.errors" class="invalid-feedback">
+                        <div *ngIf="f.Password.errors?.required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary my-button">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

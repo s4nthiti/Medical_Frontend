@@ -1,0 +1,41 @@
+<div class="topField flexcontainer">
+            <form (submit)="onAddMedicine()">
+                <label for="Medicine Name" style="font-weight: bold;">เพิ่มรายชื่อยา&nbsp;&nbsp;</label>
+                <input [(ngModel)]="medicineName" name="medicineName">
+                <button (click)="onAddMedicine()" type="button" class="btn btn-primary btn-sm float-center buttonAdd"> เพิ่ม </button>
+                <div *ngIf="submitted && medicineTaken" style="color: red">
+                    ชื่อยานี้มีอยู่แล้วในระบบ
+                </div>
+            </form>
+            <form (submit)="onSearchMedicine()">
+                <label for="Medicine Name" style="font-weight: bold;">ค้นหารายชื่อยา&nbsp;&nbsp;</label>
+                <input [(ngModel)]="searchMedicineName" name="searchMedicineName">
+                <button (click)="onSearchMedicine()" type="button" class="btn btn-primary btn-sm float-center buttonAdd"> ค้นหา </button>
+            </form>
+</div>
+
+<div class="container">
+
+    <h1>Medicine List</h1>
+  
+    <p *ngIf="!(MedicineList$ | async)"><em>Loading...</em></p>
+  
+    <table class="table table-hover table-light table-responsive-sm ">
+      <thead class="thead-light">
+        <tr>
+          <th>Medicine Name</th>
+          <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Medicine of (MedicineList$ | async)">
+            <td style="font-weight: bold;">{{ Medicine.medicineName }}</td>
+            <td><button (click)="onDeleteMedicine(Medicine.medicineName)" type="button" class="btn btn-danger btn-sm float-center buttonDelete"> ลบ </button></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="bottomRight">
+  <button routerLink="../" type="button" class="BedButton"><i class="fas fa-door-open"></i> กลับเมนู </button>
+</div>

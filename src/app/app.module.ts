@@ -12,6 +12,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { CallbackComponent } from './callback/callback.component';
 import { BackendComponent } from './backend/backend.component';
+import { MedicineComponent } from './medicine/medicine.component';
+import { RecordComponent } from './record/record.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BackendmenuComponent } from './backend/backendmenu/backendmenu.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,10 @@ import { BackendComponent } from './backend/backend.component';
     FooterComponent,
     RegisterComponent,
     CallbackComponent,
-    BackendComponent
+    BackendComponent,
+    MedicineComponent,
+    RecordComponent,
+    BackendmenuComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +39,8 @@ import { BackendComponent } from './backend/backend.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    NgbModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

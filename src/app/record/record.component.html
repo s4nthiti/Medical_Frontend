@@ -1,0 +1,190 @@
+<div class="container" *ngIf="!inRoom">
+    <div class="row">
+      <div class="col-12 table-responsive-xl">
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+                <td><button (click)="onClickRoom(1)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 1 </button></td>
+                <td><button (click)="onClickRoom(2)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 2 </button></td>
+                <td><button (click)="onClickRoom(3)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 3 </button></td>
+                <td><button (click)="onClickRoom(4)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 4 </button></td>
+                <td><button (click)="onClickRoom(5)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 5 </button></td>
+            </tr>
+            <tr>
+                <td><button (click)="onClickRoom(6)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 6 </button></td>
+                <td><button (click)="onClickRoom(7)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 7 </button></td>
+                <td><button (click)="onClickRoom(8)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 8 </button></td>
+                <td><button (click)="onClickRoom(9)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 9 </button></td>
+                <td><button (click)="onClickRoom(10)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 10 </button></td>
+            </tr>
+            <tr>
+                <td><button (click)="onClickRoom(11)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 11 </button></td>
+                <td><button (click)="onClickRoom(12)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 12 </button></td>
+                <td><button (click)="onClickRoom(13)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 13 </button></td>
+                <td><button (click)="onClickRoom(14)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 14 </button></td>
+                <td><button (click)="onClickRoom(15)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 15 </button></td>
+            </tr>
+            <tr>
+                <td><button (click)="onClickRoom(16)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 16 </button></td>
+                <td><button (click)="onClickRoom(17)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 17 </button></td>
+                <td><button (click)="onClickRoom(18)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 18 </button></td>
+                <td><button (click)="onClickRoom(19)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 19 </button></td>
+                <td><button (click)="onClickRoom(20)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 20 </button></td>
+            </tr>
+            <tr>
+                <td><button (click)="onClickRoom(21)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 21 </button></td>
+                <td><button (click)="onClickRoom(22)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 22 </button></td>
+                <td><button (click)="onClickRoom(23)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 23 </button></td>
+                <td><button (click)="onClickRoom(24)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 24 </button></td>
+                <td><button (click)="onClickRoom(25)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 25 </button></td>
+            </tr>
+            <tr>
+                <td><button (click)="onClickRoom(26)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 26 </button></td>
+                <td><button (click)="onClickRoom(27)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 27 </button></td>
+                <td><button (click)="onClickRoom(28)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 28 </button></td>
+                <td><button (click)="onClickRoom(29)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 29 </button></td>
+                <td><button (click)="onClickRoom(30)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 30 </button></td>
+            </tr>
+            <tr>
+                <td><button (click)="onClickRoom(31)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 31 </button></td>
+                <td><button (click)="onClickRoom(32)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 32 </button></td>
+                <td><button (click)="onClickRoom(33)" type="button" class="BedButton"><i class="fa fa-bed"></i> เตียงที่ 33 </button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bottomRight">
+        <button routerLink="../" type="button" class="BedButton"><i class="fas fa-door-open"></i> กลับเมนู </button>
+    </div>
+</div>
+
+<div class="container-fluid" *ngIf="inRoom">
+    <h1 class="text-center" style="font-weight: bold; font-family: 'Kanit', sans-serif;"> จัดตารางเวรการให้ยา เตียง {{roomNo}} </h1>
+    <div *ngIf="emptyRoom" class="form-group flexcontainer">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <mat-label>ชื่อผู้ป่วย</mat-label>
+                  <input type="text"
+                         placeholder="Pick one"
+                         aria-label="Number"
+                         matInput
+                         [(ngModel)]="patientName"
+                         name="patientName"
+                         [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let patientName of patientName$ | async" [value]="patientName.name">
+                      {{patientName.name}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+            <button (click)="addPatientBed()" type="button" class="btn btn-sm" style="background-color: #36c23d; color: rgb(255, 255, 255); margin-left: 5px;"><i class="fa fa-bed"></i> เพิ่มผู้ป่วย</button>
+    </div>
+
+    <div *ngIf="!emptyRoom">
+            <form id="search-form">
+                <div class="form-group flexcontainer">
+                    <div>
+                        <label>ชื่อผู้ป่วย</label>
+                        <input [disabled]="true" type="text" id="name" name="name" [(ngModel)]="currentPatient.name" class="form-control">
+                    </div>
+                    <div>
+                        <label>อายุ</label>
+                        <input [disabled]="true" type="text" id="age" name="age" [(ngModel)]="currentPatient.age" class="form-control">
+                    </div>
+                    <div>
+                        <label>R.N</label>
+                        <input [disabled]="true" type="text" id="rn" name="rn" [(ngModel)]="currentPatient.rn" class="form-control">
+                    </div>
+                    <div>
+                        <label>A.N</label>
+                        <input [disabled]="true" type="text" id="an" name="an" [(ngModel)]="currentPatient.an" class="form-control">
+                    </div>
+                    <div>
+                        <button (click)="removePatientBed()" type="button" class="btn btn-sm" style="background-color: #ff5246; color: rgb(255, 255, 255); margin-top: 30px; margin-left: 5px;"><i class="fa fa-bed"> ลบผู้ป่วยออกจากเตียง </i></button>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <form (submit)="onAddRecord()">
+                    <label for="Medication" style="font-weight: bold;">Medication/Does/Frequency&nbsp;&nbsp;</label>
+                    <select [(ngModel)]="medicationName" name="medication" (change)="onSelectMedic()">
+                        <option value="None" selected="selected">None</option>
+                        <option *ngFor="let Medicine of (MedicineList$ | async)">
+                            {{ Medicine.medicineName }}
+                        </option>
+                    </select>
+                    <div *ngIf="submitted && medicinationTaken" style="color: red">
+                        มีตารางการให้ยานี้อยู่แล้ว
+                    </div>
+                </form>
+
+                <div *ngIf="medicSelected">
+                    <mat-form-field appearance="fill" color="primary">
+                        <mat-label>กรุณาเลือกระยะเวลา</mat-label>
+                        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                        <input matStartDate formControlName="start" placeholder="Start date">
+                        <input matEndDate formControlName="end" placeholder="End date" (dateChange)="onSelectDate()"></mat-date-range-input>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #picker></mat-date-range-picker>
+                    
+                        <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">วันเริ่มต้นผิดพลาด</mat-error>
+                        <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">วันสิ้นสุดผิดพลาด</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div *ngIf="dateSelected" class="flexcontainer">
+                    <mat-form-field>
+                        <mat-label>Time</mat-label>
+                        <input
+                            matInput
+                            aria-label="default time"
+                            [ngxTimepicker]="defaultValue"
+                            [value]="'0:00'"
+                            [(ngModel)]="time"
+                            [format]="24"
+                         />
+                         <ngx-material-timepicker #defaultValue>
+                         </ngx-material-timepicker>
+                    </mat-form-field>
+                    <button (click)="addRecordTime()" [disabled]="time==null" type="button" class="btn btn-sm" style="background-color: #ff5246; color: rgb(255, 255, 255); margin-left: 5px;"><i class="fa fa-bed"> เพิ่มเวลาให้ยา </i></button>
+                </div>
+
+            </div>
+
+            <div class="container">
+
+                <h1>Record List</h1>
+              
+                <p *ngIf="!(RecordList$ | async)"><em>Loading...</em></p>
+              
+                <table class="table table-hover table-light table-responsive-sm ">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>Medication</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Time</th>
+                      <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Record of (RecordList$ | async)">
+                        <td style="font-weight: bold;">{{ Record.medicationName }}</td>
+                        <td style="font-weight: bold;">{{ Record.startdate | date:'yyyy-MM-dd'}}</td>
+                        <td style="font-weight: bold;">{{ Record.enddate | date:'yyyy-MM-dd'}}</td>
+                        <td style="font-weight: bold;">{{ time_convert(Record.time) }}</td>
+                        <td><button (click)="onDeleteRecord(Record._id)" type="button" class="btn btn-danger btn-sm float-center buttonDelete" style="margin-top: -5px; margin-left: 5px;"> ลบ </button></td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+
+    </div>
+
+    <div class="bottomRight">
+        <button (click)="backToSelect()" type="button" class="BedButton"><i class="fa fa-bed"></i> กลับ </button>
+    </div>
+</div>

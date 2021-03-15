@@ -1,3 +1,9 @@
+@media (min-width: 992px) {
+  .navbar-expand .navbar-collapse {
+    display: flex !important;
+  }
+}
+
 .navbar-custom { 
     background-color: #ffe6ee;
   }

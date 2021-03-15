@@ -5,7 +5,7 @@ import { AuthenService } from '../_services/authen.service';
 @Component({
   selector: 'app-callback',
   templateUrl: './callback.component.html',
-  styleUrls: ['./callback.component.css']
+  styleUrls: ['./callback.component.scss']
 })
 export class CallbackComponent implements OnInit {
 
