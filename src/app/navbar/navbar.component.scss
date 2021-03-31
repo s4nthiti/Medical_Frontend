@@ -1,26 +1,55 @@
+.headerwrapper {
+  min-height: 60px;
+  width: 100%;
+  z-index: 1000;
+  &:after {
+      clear: both;
+      display: block;
+      content: '';
+  }
+}
+
 @media (min-width: 992px) {
   .navbar-expand .navbar-collapse {
     display: flex !important;
   }
 }
 
+.font-logo {
+  font-family: 'Patua One', cursive;
+  font-size:38px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: -1.5px 0 #ffbdd2, 0 1.5px #ffbdd2, 1.5px 0 #ffbdd2, 0 -1.5px #ffbdd2;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logout-logo {
+  font-size:30px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: -1.5px 0 #ffbdd2, 0 1.5px #ffbdd2, 1.5px 0 #ffbdd2, 0 -1.5px #ffbdd2;
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .navbar-custom { 
     background-color: #ffe6ee;
   }
 
-  .text-glowing-0:hover {color: #fff4f7;}
+  .text-glowing-0:hover {color: #fff9fb;}
   
-  .navbar {
-    min-height: 100px;
-  }
-  
-  .tupla-logo{
-    font-family:"Pastel W01 Regular" !important;
-    font-size:50px;
-    font-style:normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-shadow: -1.5px 0 #ffbdd2, 0 1.5px #ffbdd2, 1.5px 0 #ffbdd2, 0 -1.5px #ffbdd2;
-    color: #ffffff;
-    text-decoration: none;
+.navbar {
+  width: 100%;
+  min-height: 100px;
+  background-color: #ffe6ee;
+  color: white;
+  text-align: center;
+}
+
+.font-kanit {
+	font-family: 'Kanit', sans-serif;
   }

@@ -17,6 +17,11 @@ import { RecordComponent } from './record/record.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BackendmenuComponent } from './backend/backendmenu/backendmenu.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { LoginComponent } from './login/login.component';
+import { AlertComponent } from './_alert/alert.component';
+import { ToastrModule } from 'ngx-toastr';
+import { JwtModule } from '@auth0/angular-jwt';
+import { PatientComponent } from './patient/patient.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,10 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     BackendComponent,
     MedicineComponent,
     RecordComponent,
-    BackendmenuComponent
+    BackendmenuComponent,
+    LoginComponent,
+    AlertComponent,
+    PatientComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,17 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     ReactiveFormsModule,
     FormsModule,
     NgbModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    ToastrModule.forRoot({
+      progressBar: true
+    }),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        },
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

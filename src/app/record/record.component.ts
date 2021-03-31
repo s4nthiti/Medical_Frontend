@@ -28,12 +28,15 @@ export class RecordComponent implements OnInit {
 
   medicationName : any = "";
   MedicineList$!: Observable<MedicineList[]>
+  nurseName: any;
+  NurseList$!: any;
   timeList: Observable<Date[]>
 
   medicationTaken = false;
   medicSelected = false;
   dateSelected = false;
   timeSelected = false;
+  nurseSelected = false;
 
   time: any;
 
@@ -98,11 +101,32 @@ export class RecordComponent implements OnInit {
       this.medicSelected = true;
   }
 
+  onSelectNurse() {
+    if(this.nurseName == 'None')
+      this.nurseSelected = false;
+    else
+      this.nurseSelected = true;
+  }
+
   onSelectDate() {
     if(this.range.get('start').value != null && this.range.get('end').value != null)
       this.dateSelected = true;
     else
       this.dateSelected = false;
+  }
+
+  onSelectTime() {
+    if(this.time != null)
+    {
+      this.timeSelected = true;
+      this.loadNurseList();
+    }
+    else
+      this.timeSelected = false;
+  }
+
+  async loadNurseList() {
+    this.NurseList$ = await this._service.getAllNurse();
   }
 
   addPatientBed() {
@@ -136,7 +160,7 @@ export class RecordComponent implements OnInit {
     var a = this.time.split(':');
     var timeInt = (parseInt(a[0]) * 60) + parseInt(a[1]);
     console.log(timeInt);
-    this._service.addRecordTime(this.roomNo, this.medicationName, this.range.get('start').value, this.range.get('end').value, timeInt).subscribe(res => {
+    this._service.addRecordTime(this.roomNo, this.medicationName, this.range.get('start').value, this.range.get('end').value, timeInt, this.nurseName).subscribe(res => {
       if(res == 'success'){
         this.loadRecordList();
       }
@@ -158,12 +182,17 @@ export class RecordComponent implements OnInit {
   { 
     var hours = Math.floor(num / 60);  
     var minutes = num % 60;
+    var hoursStr;
     var minutesStr;
-    if(minutes + ''.length < 2)
+    if(hours < 10)
+      hoursStr = '0' + hours;
+    else
+      hoursStr = hours;
+    if(minutes < 10)
       minutesStr = '0' + minutes;
     else
       minutesStr = minutes;
-    return `${hours}:${minutesStr}`;         
+    return `${hoursStr}:${minutesStr}`;         
   }
 
   onDeleteRecord(_id){

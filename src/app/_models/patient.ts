@@ -3,5 +3,4 @@ export class Patient {
     age: number;
     rn: string;
     an: string;
-    bedNo: number;
 }

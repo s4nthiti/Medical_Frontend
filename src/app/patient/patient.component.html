@@ -1,0 +1,54 @@
+<div class="container">
+    <form (submit)="onAddPatient()">
+        <div class="row">
+            <div class="col-sm">
+                <label for="Name" style="font-weight: bold;">ชื่อคนไข้&nbsp;&nbsp;&nbsp;</label>
+                <input [(ngModel)]="patientName" name="patientName">
+                <label for="age" style="font-weight: bold;">&nbsp;&nbsp;อายุคนไข้&nbsp;&nbsp;&nbsp;</label>
+                <input [(ngModel)]="patientAge" name="patientAge">
+                <label for="age" style="font-weight: bold;">&nbsp;&nbsp;R.N.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input [(ngModel)]="patientRN" name="patientRN">
+                <label for="age" style="font-weight: bold;">&nbsp;&nbsp;A.N.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input [(ngModel)]="patientAN" name="patientAN">
+                <button (click)="onAddPatient()" type="button" class="btn btn-primary btn-sm float-center buttonAdd"> เพิ่ม </button>
+                <div *ngIf="submitted && nameTaken" style="color: red">
+                    ชื่อคนไข้นี้มีอยู่แล้วในระบบ
+                </div>
+            </div>
+        </div>
+    </form>
+  </div>
+
+<div class="container">
+
+    <div>&nbsp;</div>
+    <div style="font-size: 30px;">รายชื่อคนไข้</div>
+    <div>&nbsp;</div>
+
+    <p *ngIf="!(PatientList$ | async)"><em>Loading...</em></p>
+
+    <table class="table table-hover table-light table-responsive-sm ">
+    <thead class="thead-light">
+        <tr>
+            <th>ชื่อคนไข้</th>
+            <th>อายุ</th>
+            <th>R.N.</th>
+            <th>A.N.</th>
+            <th>ลบ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Patient of (PatientList$ | async)">
+            <td style="font-weight: bold;">{{ Patient.name }}</td>
+            <td style="font-weight: bold;">{{ Patient.age }}</td>
+            <td style="font-weight: bold;">{{ Patient.rn }}</td>
+            <td style="font-weight: bold;">{{ Patient.an }}</td>
+            <td><button (click)="onDeletePatient(Patient.name)" type="button" class="btn btn-danger btn-sm float-center buttonDelete"> ลบ </button></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+<div class="bottomRight">
+    <button routerLink="../" type="button" class="BedButton"><i class="fas fa-door-open"></i> กลับเมนู </button>
+</div>

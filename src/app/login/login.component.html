@@ -1,0 +1,21 @@
+
+    <div class="form pink-bg-1">
+        <div class="logo-text font-kanit" style="color:white; top: 10px">เข้าสู่ระบบ</div>
+        <form class="login-form" [formGroup]="service.loginModel" (ngSubmit)="onSubmit()">
+            <div class="form-group font-kanit">
+                <input type="phonenumber" placeholder="เบอร์โทรศัพท์" formControlName="PhoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.PhoneNumber.errors }" />
+                <div *ngIf="submitted && f.PhoneNumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.PhoneNumber.errors.required">กรุณากรอกเบอร์โทรศัพท์</div>
+                    <div *ngIf="f.PhoneNumber.errors?.minlength">เบอร์โทรศัพท์ไม่ถูกต้อง</div>
+                </div>
+            </div>
+            <div class="form-group font-kanit">
+                <input type="password" placeholder="รหัสผ่าน" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
+                <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                    <div *ngIf="f.Password.errors.required">ต้องกรอกรหัสผ่าน</div>
+                    <div *ngIf="f.Password.errors.minlength">ต้องการอย่างน้อย 4 ตัว</div>
+                </div>
+            </div>
+            <button class="join-button font-kanit">ยืนยัน</button>
+        </form>
+    </div>

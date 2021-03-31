@@ -1,44 +1,44 @@
-<div class="container-fluid background">
+<div class="container-fluid background font-kanit">
     <div class="container">
-        <h1>ลงทะเบียน</h1>
+        <h1 class="font-kanit">ลงทะเบียน</h1>
             <div>
             <form [formGroup]="service.formModel" (ngSubmit)="onSubmit()">
                 <div class="form-group">
-                    <label for="email">อีเมล</label>
-                    <input type="text" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
-                    <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
-                        <div *ngIf="f.Email.errors.required">Email is required</div>
-                        <div *ngIf="f.Email.errors.email">Invalid email address</div>
+                    <label for="phoneNumber">เบอร์โทรศัพท์</label>
+                    <input type="text" formControlName="PhoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.PhoneNumber.errors }" />
+                    <div *ngIf="submitted && f.PhoneNumber.errors" class="invalid-feedback">
+                        <div *ngIf="f.PhoneNumber.errors.required">กรุณากรอกเบอร์โทรศัพท์</div>
+                        <div *ngIf="f.PhoneNumber.errors?.minlength">เบอร์โทรศัพท์ไม่ถูกต้อง</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">รหัสผ่าน</label>
+                    <input type="password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
+                    <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                        <div *ngIf="f.Password.errors.required">ต้องกรอกรหัสผ่าน</div>
+                        <div *ngIf="f.Password.errors.minlength">ต้องการอย่างน้อย 4 ตัว</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="firstName">ชื่อจริง</label>
                     <input type="text" formControlName="FirstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }" />
                     <div *ngIf="submitted && f.FirstName.errors" class="invalid-feedback">
-                        <div *ngIf="f.FirstName.errors.required">First Name is required</div>
+                        <div *ngIf="f.FirstName.errors.required">กรุณากรอกชื่อจริง</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="lastName">นามสกุล</label>
                     <input type="text" formControlName="LastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }" />
                     <div *ngIf="submitted && f.LastName.errors" class="invalid-feedback">
-                        <div *ngIf="f.LastName.errors.required">Last Name is required</div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="phoneNumber">เบอร์โทรศัพท์</label>
-                    <input type="text" formControlName="PhoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.PhoneNumber.errors }" />
-                    <div *ngIf="submitted && f.PhoneNumber.errors" class="invalid-feedback">
-                        <div *ngIf="f.PhoneNumber.errors.required">PhoneNumber is required</div>
-                        <div *ngIf="f.PhoneNumber.errors?.minlength">PhoneNumber must be at least 10 digits</div>
+                        <div *ngIf="f.LastName.errors.required">กรุณากรอกนามสกุล</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <button [disabled]="loading" class="btn btn-primary my-button">
                         <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                        Register
+                        ลงทะเบียน
                     </button>
-                    <a routerLink="../home" class="btn btn-link orange-text">Cancel</a>
+                    <a routerLink="../home" class="btn btn-link orange-text">ยกเลิก</a>
                 </div>
             </form>
             </div>

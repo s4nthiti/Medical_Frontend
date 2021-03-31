@@ -1,13 +1,26 @@
-<div>
-    <button class="JoinButton centered" routerLink="../register" style="text-decoration:none;"> เข้าร่วมกับเรา </button>
-    <a>&nbsp;</a>
-    <a>&nbsp;</a>
-    <a>&nbsp;</a>
-    <a>&nbsp;</a>
-    <a>&nbsp;</a>
-    <a>&nbsp;</a>
-    <a>&nbsp;</a>
-    <div class="buttomRight">
-        <button class="JoinButton" routerLink="../backend" style="text-decoration:none;"> <i class="fas fa-door-open"></i> </button>
+<body class="container pink-bg-1" style="padding:128px 16px 110px;" *ngIf="!checkLogin()">
+    <div class="center-div-flex-column">
+        <div class="logo-text margin-auto-content">RIGHT DOC</div>
+        <div class="font-kanit desc-text"><p>Notification for Documentation</p></div>
+        <div><button class="join-button font-kanit" (click)="goTo('register')">ลงทะเบียน</button></div>
+        <div><button class="join-button font-kanit" (click)="goTo('login')">เข้าสู่ระบบ</button></div>
     </div>
-</div>
+</body>
+
+<body class="container pink-bg-1" style="padding:32px 16px 250px;" *ngIf="checkLogin()">
+    <div class="center-div-flex-column">
+        <div class="desc-text font-kanit"><p style="font-weight: bold;text-shadow: 2px 2px 0px #868686, 5px 4px 0px rgba(0, 0, 0, 0.15);">รับการแจ้งเตือนจากไลน์</p></div>
+        <div><i class="fab fa-line fa-3x borderDemo" style="color: #00B900"></i></div>
+        <div>
+            <button class="join-button-2 font-kanit" (click)="toggleNotify()">
+                <span>
+                    <i class="fas fa-bell fa-3x my-icon-white" *ngIf="lineNotify" style="margin-top: 0px; color: rgb(99, 255, 94);"></i>
+                    <i class="fas fa-bell fa-3x my-icon-black" *ngIf="!lineNotify" style="margin-top: 0px; color: rgb(173, 0, 0);"></i>
+                </span>
+            </button>
+        </div>
+        <div *ngIf="!lineRegister"><button class="join-button font-kanit logout-pos" (click)="registerLineNoti()"><p style="margin: 0 0 0"> สมัครรับการแจ้งเตือนจากไลน์ </p></button></div>
+        <div *ngIf="userRole == 'Admin'"><button class="join-button font-kanit logout-pos" [routerLink]="['../backend']" routerLinkActive="active"><p style="margin: 0 0 0"> เข้าสู่ระบบหลังบ้าน <i class="fas fa-bell" style="color: red;"></i></p></button></div>
+        <div><button class="join-button font-kanit logout-pos" (click)="logout()"><p style="margin: 0 0 0"> ออกจากระบบ <i class="fas fa-bell" style="color: red;"></i></p></button></div>
+    </div>
+</body>

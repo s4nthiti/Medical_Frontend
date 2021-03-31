@@ -1,3 +1,7 @@
+.font-kanit {
+	font-family: 'Kanit', sans-serif;
+  }
+
 .container {
     max-width: 600px;
     top: 40px;
@@ -6,16 +10,16 @@
 }
 
 .orange-text {
-    color: #ff9b29;
+    color: #ff29d1;
 }
 
 .my-button {
-    background-color:#ffb158;
-    border: 1px solid rgb(255, 146, 21);
+    background-color:#ff8ac1;
+    border: 1px solid rgb(255, 85, 142);
 }
 
 .my-button:hover {
-	background-color:#ff9b29;
+	background-color:#ff719c;
 }
 .my-button:active {
 	position:relative;

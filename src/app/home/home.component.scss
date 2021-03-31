@@ -1,19 +1,71 @@
-section {
-    display: table;
-  }
-
-  @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-
-  div {
-	font-family: 'Kanit', sans-serif;
+ div {
+	font-family: 'Patua One', cursive;
 	font-size: 1rem;
 	line-height: 1.5;
+	//display: flex;
+	//align-items: center;
+	//justify-content: center;
+	margin: 20px auto 0;
+	//background: $bg;
+  }
+
+  .center-div-flex-column {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 20px auto 0;
 	flex-direction: column;
-	//background: $bg;
+  }
+
+  .center-div-flex-row {
+	display: flex;
+	flex-direction: row;
+  }
+
+  .margin-auto-content {
+	margin: auto;
+  }
+
+  @media screen and (min-width: 601px) {
+	div.logo-text {
+	  font-size: 80px;
+	}
+  }
+  
+  @media screen and (max-width: 600px) {
+	div.logo-text {
+	  font-size: 40px;
+	}
+  }
+
+  @media screen and (min-width: 601px) {
+	div.desc-text {
+	  font-size: 30px;
+	}
+  }
+  
+  @media screen and (max-width: 600px) {
+	div.desc-text {
+	  font-size: 15px;
+	}
+  }
+
+  .pink-bg-1{
+	color: #fff !important;
+    background-color: #ffc7dc !important;
+  }
+
+  .pink-bg-2{
+	color: #fff !important;
+    background-color: #ffa1c4 !important;
+  }
+
+  .pink-bg-3{
+	color: #fff !important;
+    background-color: #ffecf3 !important;
+  }
+
+  .font-kanit {
+	font-family: 'Kanit', sans-serif;
   }
 
   $bg: #fff;
@@ -22,7 +74,7 @@ section {
   $pink: #ffe9e9;
   $dark-pink: #f9c4d2;
   $pink-border: #b18597;
-  $pink-shadow: #ffe3e2;
+  $pink-shadow: #000000;
 
   button {
 	position: relative;
@@ -34,7 +86,7 @@ section {
 	text-decoration: none;
 	font-size: inherit;
 	font-family: inherit;
-	&.JoinButton {
+	&.join-button {
 	  font-weight: 600;
 	  color: $text;
 	  text-transform: uppercase;
@@ -55,7 +107,7 @@ section {
 		bottom: 0;
 		background: $dark-pink;
 		border-radius: inherit;
-		box-shadow: 0 0 0 2px $pink-border, 0 0.625em 0 0 $pink-shadow;
+		box-shadow: 0 0 0 2px $pink-border;
 		transform: translate3d(0, 0.75em, -1em);
 		transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
 	  }
@@ -63,7 +115,7 @@ section {
 		background: $pink;
 		transform: translate(0, 0.25em);
 		&::before {
-		  box-shadow: 0 0 0 2px $pink-border, 0 0.5em 0 0 $pink-shadow;
+		  box-shadow: 0 0 0 2px $pink-border;
 		  transform: translate3d(0, 0.5em, -1em);
 		}
 	  }
@@ -71,23 +123,74 @@ section {
 		background: $pink;
 		transform: translate(0em, 0.75em);
 		&::before {
-		  box-shadow: 0 0 0 2px $pink-border, 0 0 $pink-shadow;
+		  box-shadow: 0 0 0 2px $pink-border;
 		  transform: translate3d(0, 0, -1em);
 		}
 	  }
 	}
+	&.join-button-2 {
+		font-weight: 600;
+		color: #382b22;
+		text-transform: uppercase;
+		padding: 0.6em 0.8em;
+		background: #fff0f0;
+		border: 2px solid #b18597;
+		border-radius: 10em;
+		transform-style: preserve-3d;
+		transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+		&::before {
+		  position: absolute;
+		  content: '';
+		  width: 100%;
+		  height: 100%;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  background: $dark-pink;
+		  border-radius: inherit;
+		  box-shadow: 0 0 0 2px $pink-border;
+		  transform: translate3d(0, 0.75em, -1em);
+		  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+		}
+		&:hover {
+		  background: $pink;
+		  transform: translate(0, 0.25em);
+		  &::before {
+			box-shadow: 0 0 0 2px $pink-border;
+			transform: translate3d(0, 0.5em, -1em);
+		  }
+		}
+		&:active {
+		  background: $pink;
+		  transform: translate(0em, 0.75em);
+		  &::before {
+			box-shadow: 0 0 0 2px $pink-border;
+			transform: translate3d(0, 0, -1em);
+		  }
+		}
+	  }
   }
 
-.centered {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -100px;
+  .topright {
+	position: relative;
+	top: 8px;
+	right: 16px;
+	font-size: 18px;
   }
 
-.buttomRight {
-	position: fixed;
-    bottom:10%;
-    right:2%;
+  .borderDemo {
+	border: 5px solid rgba(255, 253, 239, 0.63);
+	border-radius: 40px;
+	background: rgb(255, 255, 255);
+	}
+
+.my-icon-white {
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: rgb(142, 255, 108);
+}
+
+.my-icon-black {
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: rgb(255, 35, 35);
 }

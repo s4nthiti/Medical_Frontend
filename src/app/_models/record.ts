@@ -4,4 +4,5 @@ export class Record {
     enddate: Date;
     medicationName: string;
     time: number;
+    nurseName: string;
 }

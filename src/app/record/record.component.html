@@ -145,11 +145,22 @@
                             [value]="'0:00'"
                             [(ngModel)]="time"
                             [format]="24"
+                            (ngModelChange)="onSelectTime()"
                          />
                          <ngx-material-timepicker #defaultValue>
                          </ngx-material-timepicker>
                     </mat-form-field>
-                    <button (click)="addRecordTime()" [disabled]="time==null" type="button" class="btn btn-sm" style="background-color: #ff5246; color: rgb(255, 255, 255); margin-left: 5px;"><i class="fa fa-bed"> เพิ่มเวลาให้ยา </i></button>
+                </div>
+
+                <div *ngIf="timeSelected" class="flexcontainer">
+                    <label for="Nurse" style="font-weight: bold;"> รายชื่อพยาบาล&nbsp;&nbsp;</label>
+                        <select [(ngModel)]="nurseName" name="nurseName" (change)="onSelectNurse()">
+                            <option value="None" selected="selected">None</option>
+                            <option *ngFor="let Nurse of NurseList$ | async">
+                                {{ Nurse }}
+                            </option>
+                        </select>
+                        <button (click)="addRecordTime()" [disabled]="nurseName=='None' || nurseName == null" type="button" class="btn btn-sm" style="background-color: #ff5246; color: rgb(255, 255, 255); margin-left: 5px;"><i class="fa fa-bed"> เพิ่มเวลาให้ยา </i></button>
                 </div>
 
             </div>
@@ -167,6 +178,7 @@
                       <th>Start Date</th>
                       <th>End Date</th>
                       <th>Time</th>
+                      <th>Nurse</th>
                       <th>Delete</th>
                     </tr>
                 </thead>
@@ -176,6 +188,7 @@
                         <td style="font-weight: bold;">{{ Record.startdate | date:'yyyy-MM-dd'}}</td>
                         <td style="font-weight: bold;">{{ Record.enddate | date:'yyyy-MM-dd'}}</td>
                         <td style="font-weight: bold;">{{ time_convert(Record.time) }}</td>
+                        <td style="font-weight: bold;">{{ Record.nurseName }}</td>
                         <td><button (click)="onDeleteRecord(Record._id)" type="button" class="btn btn-danger btn-sm float-center buttonDelete" style="margin-top: -5px; margin-left: 5px;"> ลบ </button></td>
                     </tr>
                 </tbody>
